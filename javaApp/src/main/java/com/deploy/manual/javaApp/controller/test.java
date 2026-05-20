@@ -9,7 +9,7 @@ public class test {
     @GetMapping("/health")
     public String getHealth()
     {
-        return "Health is OK";
+        return "OK";
     }
 
     @GetMapping("/testing")
