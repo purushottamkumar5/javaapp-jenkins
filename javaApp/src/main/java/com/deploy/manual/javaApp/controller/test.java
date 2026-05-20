@@ -12,6 +12,12 @@ public class test {
         return "Health is OK";
     }
 
+    @GetMapping("/testing")
+    public String getTest()
+    {
+        return "Test passed";
+    }
+
 
 
 
