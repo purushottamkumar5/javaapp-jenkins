@@ -15,7 +15,7 @@ public class test {
     @GetMapping("/testing")
     public String getTest()
     {
-        return "Test";
+        return "Test passed";
     }
 
 
