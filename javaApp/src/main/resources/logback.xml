@@ -1,0 +1,29 @@
+<configuration>
+    <appender name="myFileAppender" class="ch.qos.logback.core.FileAppender">
+<!--    <appender name="myFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!-- File name in which all the logs will be printed -->
+        <!-- File appender doesnot provide rotation means all the logs will be stored in the same file it will not create new file-->
+        <!-- Use rolling file appenders to create new file -->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">-->
+            <!-- Rolling policy based on size and time -->
+<!--            <fileNamePattern>javaApp-%d{yy-MM-dd_HH}.%i.log</fileNamePattern>-->
+<!--            <maxFileSize>10MB</maxFileSize> &lt;!&ndash; If size of the log file is 10 mb reached create new file &ndash;&gt;-->
+<!--            <maxHistory>10</maxHistory>  &lt;!&ndash; More than 10 log files are created delete the oldest one &ndash;&gt;-->
+<!--        </rollingPolicy>-->
+        <file>
+            javaApp.log  <!-- File name in ehcih all the logs will be printed -->
+        </file>
+        <encoder>
+            <!-- encoder means the format in which you want to see the logs -->
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+                <!-- time threadName -5 means 5 spaces loggingLevel loggerName upto 36 chars message and new line  -->
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger directs all logs to the FILE appender -->
+    <root level="INFO">
+        <appender-ref ref="myFileAppender" />
+    </root>
+</configuration>
